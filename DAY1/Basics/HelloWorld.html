@@ -12,7 +12,12 @@
 
     <script>
       var h1Element = React.createElement("h1", {}, "Hello React !!!"); // createElement(elementtobecreated,attributes,children)
-      ReactDOM.render(h1Element, document.getElementById("target"));
+      var pElement = React.createElement("p", {}, "This is a para !");
+      var sectionElement = React.createElement("section", {}, [
+        h1Element,
+        pElement,
+      ]);
+      ReactDOM.render(sectionElement, document.getElementById("target"));
     </script>
   </body>
 </html>
