@@ -2,7 +2,7 @@ import React from "react";
 import Rating from "../molecules/rating/rating";
 
 export default class Course extends React.Component {
-  state = { currLikes: 0 };
+  state = { currLikes: this.props.coursedetails.likes };
   IncrementLikes() {
     // this.props.coursedetails.likes++; // props are read-only
     // this.state.currLikes++; // state is immutable
