@@ -1,15 +1,8 @@
 import React from "react";
+import Rating from "../molecules/rating/rating";
 
 export default class Course extends React.Component {
   render() {
-    let ratings = [];
-    for (let index = 0; index < this.props.coursedetails.rating; index++) {
-      ratings.push(
-        <span style={{ color: "orange" }}>
-          <i class="fa-solid fa-star"></i>
-        </span>,
-      );
-    }
     return (
       <div className="col-md-3 ">
         <div className="card m-2 shadow rounded-0">
@@ -24,7 +17,10 @@ export default class Course extends React.Component {
             <h5 className="card-title">{this.props.coursedetails.title}</h5>
             <div className="card-text">
               {/* <p>{this.props.coursedetails.rating}</p> */}
-              <p> {ratings}</p>
+              <p>
+                {" "}
+                <Rating noofstars={this.props.coursedetails.rating} />{" "}
+              </p>
             </div>
             <p className="card-text">₹. {this.props.coursedetails.price}</p>
 
