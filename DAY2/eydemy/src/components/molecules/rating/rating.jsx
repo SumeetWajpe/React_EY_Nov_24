@@ -7,6 +7,6 @@ export default class Rating extends Component {
     for (let index = 0; index < this.props.noofstars; index++) {
       ratings.push(<Star />);
     }
-    return <p>{ratings}</p>;
+    return <div>{ratings}</div>;
   }
 }
