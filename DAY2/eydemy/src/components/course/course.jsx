@@ -35,7 +35,12 @@ export default class Course extends React.Component {
               {/* {this.props.coursedetails.likes}{" "} */}
               {this.state.currLikes} <i className="fa-solid fa-thumbs-up"></i>
             </button>
-            <button className="btn btn-outline-danger mx-1">
+            <button
+              className="btn btn-outline-danger mx-1"
+              onClick={() =>
+                this.props.OnDeleteACourse(this.props.coursedetails.id)
+              }
+            >
               <i className="fa-solid fa-trash"></i>
             </button>
           </div>

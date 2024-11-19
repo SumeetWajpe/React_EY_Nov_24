@@ -65,6 +65,10 @@ export default class ListOfCourses extends React.Component {
     },
   ];
 
+  DeleteACourse(idToBeDeleted) {
+    console.log("Deleting..", idToBeDeleted);
+  }
+
   render() {
     return (
       <>
@@ -73,7 +77,10 @@ export default class ListOfCourses extends React.Component {
         </header>
         <div className="row">
           {this.courses.map(course => (
-            <Course coursedetails={course} />
+            <Course
+              coursedetails={course}
+              OnDeleteACourse={id => this.DeleteACourse(id)}
+            />
           ))}
         </div>
       </>
