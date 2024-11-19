@@ -15,7 +15,12 @@ export default class Course extends React.Component {
           <div className="card-body">
             <h5 className="card-title">{this.props.coursedetails.title}</h5>
             <div className="card-text">
-              <p>{this.props.coursedetails.rating}</p>
+              {/* <p>{this.props.coursedetails.rating}</p> */}
+              <p>
+                <span style={{ color: "orange" }}>
+                  <i class="fa-solid fa-star"></i>
+                </span>
+              </p>
             </div>
             <p className="card-text">₹. {this.props.coursedetails.price}</p>
 
