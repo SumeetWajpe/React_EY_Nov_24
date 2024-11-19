@@ -28,7 +28,7 @@ class App extends React.Component {
   ];
   render() {
     return (
-      <div>
+      <div className="row">
         {this.messages.map(m => (
           <Message messagedetails={m} />
         ))}
