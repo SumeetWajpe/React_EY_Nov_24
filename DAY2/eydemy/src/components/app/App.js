@@ -5,7 +5,7 @@ import Counter from "../counter/counter";
 const App = () => (
   <>
     <Counter />
-    {/* <ListOfCourses/> */}
+    {/* <ListOfCourses /> */}
   </>
 );
 

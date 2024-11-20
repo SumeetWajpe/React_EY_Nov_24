@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Rating from "../molecules/rating/rating";
 
 export default function Course(props) {
+  const [currLikes, setCurrLikes] = useState(props.coursedetails.likes);
   return (
     <div className="col-md-3 ">
       <div className="card m-2 shadow rounded-0">
@@ -20,9 +21,11 @@ export default function Course(props) {
           </div>
           <p className="card-text">₹. {props.coursedetails.price}</p>
 
-          <button className="btn btn-outline-primary">
-            {props.coursedetails.likes}{" "}
-            <i className="fa-solid fa-thumbs-up"></i>
+          <button
+            className="btn btn-outline-primary"
+            onClick={() => setCurrLikes(currLikes + 1)}
+          >
+            {currLikes} <i className="fa-solid fa-thumbs-up"></i>
           </button>
           <button className="btn btn-outline-danger mx-1">
             <i className="fa-solid fa-trash"></i>
