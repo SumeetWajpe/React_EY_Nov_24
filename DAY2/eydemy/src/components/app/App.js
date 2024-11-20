@@ -2,12 +2,14 @@ import React from "react";
 import ListOfCourses from "../listofcourses/listofcourses";
 import Counter from "../counter/counter";
 import Posts from "../posts/posts";
+import GetPostById from "../getpostbyid/getpostbyid";
 
 const App = () => (
   <>
+    <GetPostById />
     {/* <Posts /> */}
     {/* <Counter /> */}
-    <ListOfCourses />
+    {/* <ListOfCourses /> */}
   </>
 );
 
