@@ -3,13 +3,15 @@ import ListOfCourses from "../listofcourses/listofcourses";
 import Counter from "../counter/counter";
 import Posts from "../posts/posts";
 import GetPostById from "../getpostbyid/getpostbyid";
+import NewCourse from "../newcourse/newcourse";
 
 const App = () => (
   <>
-    <GetPostById />
+    {/* <GetPostById /> */}
     {/* <Posts /> */}
     {/* <Counter /> */}
-    {/* <ListOfCourses /> */}
+    <ListOfCourses />
+    {/* <NewCourse /> */}
   </>
 );
 

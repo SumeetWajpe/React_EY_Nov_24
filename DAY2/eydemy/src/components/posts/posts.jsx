@@ -10,8 +10,14 @@ export default function Posts() {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      setPosts(res.data);
+      try {
+        const res = await axios.get(
+          "https://jsonplaceholder.typicode.com/posts",
+        );
+        setPosts(res.data);
+      } catch (error) {
+        
+      }
     })();
   }, []);
 
@@ -20,11 +26,15 @@ export default function Posts() {
       <header>
         <h2>All Posts</h2>
       </header>
-      <ul>
-        {posts.map(p => (
-          <li key={p.id}>{p.title}</li>
-        ))}
-      </ul>
+      {posts.length > 0 ? (
+        <ul>
+          {posts.map(p => (
+            <li key={p.id}>{p.title}</li>
+          ))}
+        </ul>
+      ) : (
+        "Loading..."
+      )}
     </div>
   );
 }

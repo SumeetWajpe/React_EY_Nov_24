@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Course from "../course/course";
 import axios from "axios";
+import NewCourse from "../newcourse/newcourse";
 
 export default function ListOfCourses() {
   const [courses, setCourses] = useState([]);
@@ -12,11 +13,17 @@ export default function ListOfCourses() {
     })();
   }, []);
 
+  function AddANewCourse(courseToBeAdded) {
+    setCourses([...courses, courseToBeAdded]);
+  }
+
   return (
     <>
       <header>
         <h1>List Of Courses</h1>
       </header>
+
+      <NewCourse AddANewCourse={c => AddANewCourse(c)} />
       <div className="row">
         {courses.map(course => (
           <Course coursedetails={course} key={course.id} />
