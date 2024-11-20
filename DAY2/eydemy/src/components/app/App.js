@@ -5,9 +5,9 @@ import Posts from "../posts/posts";
 
 const App = () => (
   <>
-    <Posts />
+    {/* <Posts /> */}
     {/* <Counter /> */}
-    {/* <ListOfCourses /> */}
+    <ListOfCourses />
   </>
 );
 

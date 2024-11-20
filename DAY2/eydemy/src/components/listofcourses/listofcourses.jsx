@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Course from "../course/course";
+import axios from "axios";
 
 export default function ListOfCourses() {
-  let courses = ;
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await axios.get("http://localhost:3500/courses");
+      setCourses(res.data);
+    })();
+  }, []);
+
   return (
     <>
       <header>
