@@ -1,10 +1,12 @@
 import React from "react";
 import ListOfCourses from "../listofcourses/listofcourses";
 import Counter from "../counter/counter";
+import Posts from "../posts/posts";
 
 const App = () => (
   <>
-    <Counter />
+    <Posts />
+    {/* <Counter /> */}
     {/* <ListOfCourses /> */}
   </>
 );
