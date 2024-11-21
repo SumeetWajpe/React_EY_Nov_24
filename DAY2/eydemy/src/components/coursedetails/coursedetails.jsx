@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Rating from "../molecules/rating/rating";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function CourseDetails() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [theCourse, settheCourse] = useState({});
   useEffect(() => {
@@ -37,6 +38,13 @@ export default function CourseDetails() {
             <p className="card-text">₹.{theCourse.price}</p>
 
             <div>{theCourse.description}</div>
+
+            <button
+              className="btn btn-outline-success"
+              onClick={() => navigate("/")}
+            >
+              <i className="fa-solid fa-arrow-left"></i>
+            </button>
           </div>
         </div>
       </main>
