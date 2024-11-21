@@ -13,17 +13,12 @@ export default function ListOfCourses() {
     })();
   }, []);
 
-  function AddANewCourse(courseToBeAdded) {
-    setCourses([...courses, courseToBeAdded]);
-  }
-
   return (
     <>
       <header>
         <h1>List Of Courses</h1>
       </header>
 
-      <NewCourse AddANewCourse={c => AddANewCourse(c)} />
       <div className="row">
         {courses.map(course => (
           <Course coursedetails={course} key={course.id} />

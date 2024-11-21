@@ -6,7 +6,7 @@ export default function NewCourse() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "onChange" });
   return (
     <>
       <header>
