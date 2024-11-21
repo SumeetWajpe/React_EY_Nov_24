@@ -8,19 +8,31 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navbar from "../navbar/navbar";
 import PostDetails from "../postdetails/postdetails";
 import CourseDetails from "../coursedetails/coursedetails";
+import Dashboard from "../dashboard/dashboard";
 
 const App = () => (
   <BrowserRouter>
     <Navbar />
     <Routes>
-      <Route path="/" Component={ListOfCourses} />
+      <Route path="/" Component={Dashboard}>
+        <Route path="" Component={ListOfCourses} />
+        <Route path="coursedetails/:id" Component={CourseDetails} />
+        <Route path="posts" Component={Posts} />
+        <Route path="postdetails/:id" Component={PostDetails} />
+
+        <Route path="postbyid" Component={GetPostById} />
+        <Route path="newcourse" Component={NewCourse} />
+      </Route>
+
+      {/* <Route path="/" Component={ListOfCourses} />
       <Route path="/coursedetails/:id" Component={CourseDetails} />
 
       <Route path="/posts" Component={Posts} />
       <Route path="/postdetails/:id" Component={PostDetails} />
 
       <Route path="/postbyid" Component={GetPostById} />
-      <Route path="/newcourse" Component={NewCourse} />
+      <Route path="/newcourse" Component={NewCourse} /> */}
+
       <Route
         path="*"
         Component={() => (
