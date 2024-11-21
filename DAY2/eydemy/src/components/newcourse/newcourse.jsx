@@ -2,7 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function NewCourse() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
     <>
       <header>
@@ -19,7 +23,12 @@ export default function NewCourse() {
               <label htmlFor="txtCourseId">Id : </label>
             </div>
             <div className="col-md-4">
-              <input type="number" id="txtCourseId" {...register("id")} />
+              <input
+                type="number"
+                id="txtCourseId"
+                {...register("id", { required: "Id is required!" })}
+              />
+              {errors.id && <p className="text-danger">{errors.id.message}</p>}
             </div>
           </div>
           <div className="row m-1">
@@ -31,8 +40,17 @@ export default function NewCourse() {
                 type="text"
                 id="txtCourseTitle"
                 placeholder="Max 20 characters"
-                {...register("title")}
+                {...register("title", {
+                  required: "Title is required!",
+                  maxLength: {
+                    value: 20,
+                    message: "You exceeded max length of 20 chars!",
+                  },
+                })}
               />
+              {errors.title && (
+                <p className="text-danger">{errors.title.message}</p>
+              )}
             </div>
           </div>
           <div className="row m-1">
