@@ -4,10 +4,11 @@ import Counter from "../counter/counter";
 import Posts from "../posts/posts";
 import GetPostById from "../getpostbyid/getpostbyid";
 import NewCourse from "../newcourse/newcourse";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 const App = () => (
   <BrowserRouter>
+    <Link to="/">Courses</Link> | <Link to="/posts">Posts</Link>
     <Routes>
       <Route path="/" Component={ListOfCourses} />
       <Route path="/posts" Component={Posts} />
