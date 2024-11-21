@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Course from "../course/course";
 import axios from "axios";
-import NewCourse from "../newcourse/newcourse";
 
 export default function ListOfCourses() {
   const [courses, setCourses] = useState([]);
