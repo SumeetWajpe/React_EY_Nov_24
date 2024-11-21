@@ -15,9 +15,7 @@ export default function Posts() {
           "https://jsonplaceholder.typicode.com/posts",
         );
         setPosts(res.data);
-      } catch (error) {
-        
-      }
+      } catch (error) {}
     })();
   }, []);
 
@@ -27,9 +25,11 @@ export default function Posts() {
         <h2>All Posts</h2>
       </header>
       {posts.length > 0 ? (
-        <ul>
+        <ul className="list-group">
           {posts.map(p => (
-            <li key={p.id}>{p.title}</li>
+            <li key={p.id} className="list-group-item">
+              {p.title}
+            </li>
           ))}
         </ul>
       ) : (
