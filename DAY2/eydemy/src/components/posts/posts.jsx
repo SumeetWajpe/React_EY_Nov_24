@@ -29,7 +29,7 @@ export default function Posts() {
         <ul className="list-group">
           {posts.map(p => (
             <li key={p.id} className="list-group-item">
-              <Link to="/postdetails">{p.title}</Link>
+              <Link to={`/postdetails/${p.id}`}>{p.title}</Link>
             </li>
           ))}
         </ul>
