@@ -20,12 +20,12 @@ export default function NewCourse() {
         <form
           onSubmit={handleSubmit(async formData => {
             try {
-              let courseToBeInsterted = { ...formData };
+              let courseToBeInserted = { ...formData };
 
               let response = await fetch("http://localhost:3500/courses", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(courseToBeInsterted),
+                body: JSON.stringify(courseToBeInserted),
               });
               let message = await response.json();
               if (message) {
