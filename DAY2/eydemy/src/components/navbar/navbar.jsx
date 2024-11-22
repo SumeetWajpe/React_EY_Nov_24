@@ -44,6 +44,11 @@ export default function Navbar() {
                 Get Post By Id
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/contextapi">
+                ContextAPI
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

@@ -10,6 +10,7 @@ import PostDetails from "../postdetails/postdetails";
 import CourseDetails from "../coursedetails/coursedetails";
 import Dashboard from "../dashboard/dashboard";
 import { ToastContainer } from "react-toastify";
+import GrandParent from "../context/counter.context";
 
 const App = () => (
   <BrowserRouter>
@@ -23,6 +24,7 @@ const App = () => (
 
         <Route path="postbyid" Component={GetPostById} />
         <Route path="newcourse" Component={NewCourse} />
+        <Route path="contextapi" Component={GrandParent} />
       </Route>
 
       {/* <Route path="/" Component={ListOfCourses} />
