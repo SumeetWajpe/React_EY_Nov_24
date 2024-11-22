@@ -1,7 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 export default function NewCourse() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,8 +18,23 @@ export default function NewCourse() {
       </header>
       <div className="d-flex justify-content-center align-items-center">
         <form
-          onSubmit={handleSubmit(formData => {
-            console.log(formData);
+          onSubmit={handleSubmit(async formData => {
+            try {
+              let courseToBeInsterted = { ...formData };
+
+              let response = await fetch("http://localhost:3500/courses", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(courseToBeInsterted),
+              });
+              let message = await response.json();
+              if (message) {
+                toast.success(`${message.title} added successfully !`);
+                navigate("/");
+              }
+            } catch (error) {
+              // navigate("/");
+            }
           })}
         >
           <div className="row m-1">

@@ -9,6 +9,7 @@ import Navbar from "../navbar/navbar";
 import PostDetails from "../postdetails/postdetails";
 import CourseDetails from "../coursedetails/coursedetails";
 import Dashboard from "../dashboard/dashboard";
+import { ToastContainer } from "react-toastify";
 
 const App = () => (
   <BrowserRouter>
@@ -44,6 +45,19 @@ const App = () => (
         )}
       />
     </Routes>
+
+    <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      draggable
+      theme="light"
+      transition="Bounce"
+    />
+    <ToastContainer />
   </BrowserRouter>
 );
 
