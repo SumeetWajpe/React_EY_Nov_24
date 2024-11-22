@@ -20,10 +20,12 @@ export default function GrandParent() {
 
 function Parent() {
   return (
-    <div>
-      <Child />
-      <AnotherChild />
-    </div>
+    <CounterContext.Provider value={{ count: 100 }}>
+      <div>
+        <Child />
+        <AnotherChild />
+      </div>
+    </CounterContext.Provider>
   );
 }
 
@@ -47,7 +49,7 @@ function Child() {
       <h3>Count : {ctx.count}</h3>
       <button
         className="btn btn-outline-primary"
-        onClick={() => ctx.increment()}
+        // onClick={() => ctx?.increment()}
       >
         ++
       </button>
