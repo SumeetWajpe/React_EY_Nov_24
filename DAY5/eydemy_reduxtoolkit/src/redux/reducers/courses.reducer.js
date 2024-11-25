@@ -67,7 +67,21 @@ const coursesSlice = createSlice({
   initialState,
   reducers: {
     incrementLikes: (store, action) => {
-      return store; // updated store
+      // console.log("Increment Likes !!");
+      // console.log(action);
+      // return store; // updated store
+
+      let cid = action.payload;
+      let index = store.findIndex(c => c.id == cid);
+
+      // return [
+      //   ...store.slice(0, index),
+      //   { ...store[index], likes: store[index].likes + 1 },
+      //   ...store.slice(index + 1),
+      // ];
+
+      store[index].likes++; // The Immer library that returns a newer object (store)
+      return store;
     },
   },
 });

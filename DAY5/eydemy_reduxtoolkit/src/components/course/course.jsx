@@ -1,7 +1,11 @@
 import React from "react";
 import Rating from "../rating/rating";
+import { useDispatch } from "react-redux";
+import { incrementLikes } from "../../redux/reducers/courses.reducer";
 
 export default function Course(props) {
+  const dispatch = useDispatch();
+
   return (
     <div className="col-md-3 ">
       <div className="card m-2 shadow rounded-0">
@@ -20,7 +24,10 @@ export default function Course(props) {
           </div>
           <p className="card-text">₹. {props.coursedetails.price}</p>
 
-          <button className="btn btn-outline-primary">
+          <button
+            className="btn btn-outline-primary"
+            onClick={() => dispatch(incrementLikes(props.coursedetails.id))}
+          >
             {props.coursedetails.likes}{" "}
             <i className="fa-solid fa-thumbs-up"></i>
           </button>

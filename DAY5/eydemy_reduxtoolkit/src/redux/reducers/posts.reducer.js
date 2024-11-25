@@ -13,6 +13,8 @@ const postsSlice = createSlice({
   initialState,
   reducers: {
     addPost: (store, action) => {
+      console.log(store.length);
+
       return store; // updated store
     },
   },
