@@ -1,11 +1,9 @@
-import { useSelector } from "react-redux";
+import ListOfCourses from "../listofcourses/listofcourses";
 
 function App() {
-  const courses = useSelector(store => store.courses);
-  console.log(courses);
   return (
     <>
-      <h1>App !</h1>
+      <ListOfCourses />
     </>
   );
 }
