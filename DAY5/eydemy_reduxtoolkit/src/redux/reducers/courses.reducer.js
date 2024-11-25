@@ -83,8 +83,15 @@ const coursesSlice = createSlice({
       store[index].likes++; // The Immer library that returns a newer object (store)
       return store;
     },
+    deleteCourse: (store, action) => {
+      // logic to delete (filter/splice)
+      let cid = action.payload;
+      let index = store.findIndex(c => c.id == cid);
+      store.splice(index, 1);
+      return store;
+    },
   },
 });
 
-export const { incrementLikes } = coursesSlice.actions;
+export const { incrementLikes, deleteCourse } = coursesSlice.actions;
 export default coursesSlice.reducer;
