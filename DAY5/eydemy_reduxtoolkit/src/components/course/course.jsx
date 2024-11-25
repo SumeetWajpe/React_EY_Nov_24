@@ -5,6 +5,7 @@ import {
   deleteCourse,
   incrementLikes,
 } from "../../redux/reducers/courses.reducer";
+import { Link } from "react-router-dom";
 
 export default function Course(props) {
   const dispatch = useDispatch();
@@ -12,13 +13,16 @@ export default function Course(props) {
   return (
     <div className="col-md-3 ">
       <div className="card m-2 shadow rounded-0">
-        <img
-          src={props.coursedetails.imageUrl}
-          className="card-img-top rounded-0"
-          alt={props.coursedetails.title}
-          width="150px"
-          height="150px"
-        />
+        <Link to={`/coursedetails/${props.coursedetails.id}`}>
+          <img
+            src={props.coursedetails.imageUrl}
+            className="card-img-top rounded-0"
+            alt={props.coursedetails.title}
+            width="150px"
+            height="150px"
+          />
+        </Link>
+
         <div className="card-body">
           <h5 className="card-title">{props.coursedetails.title}</h5>
           <div className="card-text">
