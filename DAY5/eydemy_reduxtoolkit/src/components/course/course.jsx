@@ -6,7 +6,7 @@ import {
   incrementLikes,
 } from "../../redux/reducers/courses.reducer";
 import { Link } from "react-router-dom";
-import { addToCart } from "../../redux/reducers/cart.reducer";
+import { addToCart, removeFromCart } from "../../redux/reducers/cart.reducer";
 
 export default function Course(props) {
   const dispatch = useDispatch();
@@ -47,7 +47,13 @@ export default function Course(props) {
           <input
             type="checkbox"
             id="chkAddToCart"
-            onChange={() => dispatch(addToCart(props.coursedetails))}
+            onChange={e => {
+              if (e.target.checked) {
+                dispatch(addToCart(props.coursedetails));
+              } else {
+                dispatch(removeFromCart(props.coursedetails.id));
+              }
+            }}
           />{" "}
           <label htmlFor="chkAddToCart">Add to Cart</label>
         </div>

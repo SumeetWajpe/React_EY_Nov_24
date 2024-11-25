@@ -11,8 +11,12 @@ const cartSlice = createSlice({
       store.push(courseToBeAdded);
       return store;
     },
+    removeFromCart: (store, action) => {
+      let id = action.payload;
+      return store.filter(c => c.id !== id);
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
