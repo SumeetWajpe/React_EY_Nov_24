@@ -6,6 +6,7 @@ import {
   incrementLikes,
 } from "../../redux/reducers/courses.reducer";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../redux/reducers/cart.reducer";
 
 export default function Course(props) {
   const dispatch = useDispatch();
@@ -30,7 +31,6 @@ export default function Course(props) {
             <Rating noofstars={props.coursedetails.rating} />{" "}
           </div>
           <p className="card-text">₹. {props.coursedetails.price}</p>
-
           <button
             className="btn btn-outline-primary"
             onClick={() => dispatch(incrementLikes(props.coursedetails.id))}
@@ -44,6 +44,12 @@ export default function Course(props) {
           >
             <i className="fa-solid fa-trash"></i>
           </button>
+          <input
+            type="checkbox"
+            id="chkAddToCart"
+            onChange={() => dispatch(addToCart(props.coursedetails))}
+          />{" "}
+          <label htmlFor="chkAddToCart">Add to Cart</label>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CartIcon from "../cart/carticon/carticon";
 
 export default function Navbar() {
   return (
@@ -51,6 +52,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
+        <CartIcon />
       </div>
     </nav>
   );
