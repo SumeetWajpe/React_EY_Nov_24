@@ -37,13 +37,7 @@ export default function Course(props) {
           >
             {props.coursedetails.likes}{" "}
             <i className="fa-solid fa-thumbs-up"></i>
-          </button>
-          <button
-            className="btn btn-outline-danger mx-1"
-            onClick={() => dispatch(deleteCourse(props.coursedetails.id))}
-          >
-            <i className="fa-solid fa-trash"></i>
-          </button>
+          </button>{" "}
           <input
             type="checkbox"
             id="chkAddToCart"

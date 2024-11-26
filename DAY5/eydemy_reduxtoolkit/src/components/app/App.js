@@ -3,6 +3,8 @@ import ListOfCourses from "../listofcourses/listofcourses";
 import Navbar from "../navbar/navbar";
 import Dashboard from "../dashboard/dashboard";
 import CourseDetails from "../coursedetails/coursedetails";
+import CartItems from "../cart/cartitems/cartitems";
+import Posts from "../posts/posts";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Route path="/" Component={Dashboard}>
           <Route path="" Component={ListOfCourses} />
           <Route path="coursedetails/:id" Component={CourseDetails} />
+          <Route path="cart" Component={CartItems} />
+          <Route path="posts" Component={Posts} />
           {/* <Route path="posts" Component={Posts} />
           <Route path="postdetails/:id" Component={PostDetails} />
 

@@ -7,10 +7,6 @@ export default function ListOfCourses() {
 
   return (
     <>
-      <header>
-        <h1>List Of Courses</h1>
-      </header>
-
       <div className="row">
         {courses.map(course => (
           <Course coursedetails={course} key={course.id} />
