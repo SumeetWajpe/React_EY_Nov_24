@@ -7,10 +7,15 @@
     <script>
       function* Generator() {
         console.log("Hello Generator !");
+        const value = yield 10;
+        console.log(value);
+        console.log("Printed after yielding");
       }
 
       const itr = Generator();
       console.log(itr.next());
+      console.log("Back to main script !");
+      console.log(itr.next(20));
     </script>
   </head>
   <body></body>
