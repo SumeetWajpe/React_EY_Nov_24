@@ -11,14 +11,18 @@ export default function Posts() {
     dispatch(fetchPosts());
   }, []);
 
+  if (posts.error)
+    return <h2 className="text-danger"> Something went wrong !</h2>;
+
   return (
     <div>
       <header>
         <h2>All Posts</h2>
       </header>
-      {posts.length > 0 ? (
+
+      {posts.loading == false ? (
         <ul className="list-group">
-          {posts.map(p => (
+          {posts.posts.map(p => (
             <li key={p.id} className="list-group-item">
               <Link to={`/postdetails/${p.id}`}>{p.title}</Link>
             </li>
