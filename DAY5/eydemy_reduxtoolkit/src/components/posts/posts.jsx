@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts, setAllPosts } from "../../redux/reducers/posts.reducer";
 export default function Posts() {
   const posts = useSelector(store => store.posts); // []
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchPosts());
+    dispatch({ type: "POSTS_FETCH_REQUESTED" });
   }, []);
 
   if (posts.error)
