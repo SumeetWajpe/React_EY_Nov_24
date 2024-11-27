@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CartIcon from "../cart/carticon/carticon";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserAuthenticated } from "../../redux/reducers/auth.reducer";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const userdetails = useSelector(store => store.auth);
   return (
     <nav
@@ -54,8 +57,24 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="text-warning"> Hello {userdetails.username} !</div>{" "}
-        <CartIcon />
+        <div className="d-flex">
+          <div className="text-warning"> Hello {userdetails.username} !</div>{" "}
+          <CartIcon />{" "}
+          <button
+            className="btn btn-outline-primary"
+            onClick={() => {
+              dispatch(
+                setUserAuthenticated({
+                  isUserAuthenticated: false,
+                  username: "",
+                }),
+              );
+              navigate("/");
+            }}
+          >
+            Logout
+          </button>
+        </div>
       </div>
     </nav>
   );
