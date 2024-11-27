@@ -1,18 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListOfCourses from "../listofcourses/listofcourses";
 import NewCourse from "../newcourse/newcourse";
-import Navbar from "../navbar/navbar";
 import Dashboard from "../dashboard/dashboard";
 import CourseDetails from "../coursedetails/coursedetails";
 import CartItems from "../cart/cartitems/cartitems";
 import Posts from "../posts/posts";
+import Login from "../login/login";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path="/" Component={Dashboard}>
+        <Route path="/" Component={Login} />
+        <Route path="/dashboard" Component={Dashboard}>
           <Route path="" Component={ListOfCourses} />
           <Route path="coursedetails/:id" Component={CourseDetails} />
           <Route path="cart" Component={CartItems} />
