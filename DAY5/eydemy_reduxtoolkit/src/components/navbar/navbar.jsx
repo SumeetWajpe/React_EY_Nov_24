@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CartIcon from "../cart/carticon/carticon";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
+  const userdetails = useSelector(store => store.auth);
   return (
     <nav
       className="navbar navbar-expand-lg bg-dark border-bottom border-body"
@@ -26,32 +28,33 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/dashboard">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/newcourse">
+              <Link className="nav-link" to="/dashboard/newcourse">
                 New Course
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/posts">
+              <Link className="nav-link" to="/dashboard/posts">
                 Posts
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/postbyid">
+              <Link className="nav-link" to="/dashboard/postbyid">
                 Get Post By Id
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contextapi">
+              <Link className="nav-link" to="/dashboard/contextapi">
                 ContextAPI
               </Link>
             </li>
           </ul>
         </div>
+        <div className="text-warning"> Hello {userdetails.username} !</div>{" "}
         <CartIcon />
       </div>
     </nav>

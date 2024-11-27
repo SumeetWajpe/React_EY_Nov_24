@@ -1,10 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { setUserAuthenticated } from "../../redux/reducers/auth.reducer";
+import { useDispatch } from "react-redux";
 
 export default function Login() {
   const { handleSubmit, register } = useForm({ mode: "onChange" });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div
@@ -14,6 +17,13 @@ export default function Login() {
       <form
         onSubmit={handleSubmit(inputData => {
           if (inputData.username === "sumeet" && inputData.password === "123") {
+            // should be done after server call
+            dispatch(
+              setUserAuthenticated({
+                isUserAuthenticated: true,
+                username: inputData.username,
+              }),
+            );
             navigate("/dashboard");
           }
         })}

@@ -5,25 +5,30 @@ import Dashboard from "../dashboard/dashboard";
 import CourseDetails from "../coursedetails/coursedetails";
 import CartItems from "../cart/cartitems/cartitems";
 import Posts from "../posts/posts";
+import PostDetails from "../postdetails/postdetails";
 import Login from "../login/login";
+import RequireAuth from "../hoc/requireauth";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" Component={Login} />
-        <Route path="/dashboard" Component={Dashboard}>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
           <Route path="" Component={ListOfCourses} />
           <Route path="coursedetails/:id" Component={CourseDetails} />
           <Route path="cart" Component={CartItems} />
           <Route path="posts" Component={Posts} />
-          <Route path="newcourse" Component={NewCourse} />
-
-          {/* <Route path="posts" Component={Posts} />
           <Route path="postdetails/:id" Component={PostDetails} />
 
-          <Route path="postbyid" Component={GetPostById} />
-          <Route path="contextapi" Component={GrandParent} /> */}
+          <Route path="newcourse" Component={NewCourse} />
         </Route>
 
         <Route

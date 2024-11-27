@@ -55,7 +55,7 @@ function* AddNewCourse_Gen_Saga(action) {
 
 // Watcher Saga
 export function* mySaga() {
-  // yield takeLatest("POSTS_FETCH_REQUESTED", fetchPostsSaga);
+  yield takeLatest("POSTS_FETCH_REQUESTED", fetchPostsSaga);
   yield takeLatest("COURSES_FETCH_REQUESTED", fetchCoursesSaga);
   // yield takeLatest("COURSES_FETCH_RETRY", retrySaga);
   yield takeLatest("ADD_NEW_COURSE", AddNewCourse_Gen_Saga);
