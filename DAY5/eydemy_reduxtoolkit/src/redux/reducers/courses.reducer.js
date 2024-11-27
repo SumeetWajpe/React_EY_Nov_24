@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// initialState should be an object -> {courses:[],loading:true,error:""}
+
 let initialState = [
   {
     id: "1",
@@ -90,8 +92,13 @@ const coursesSlice = createSlice({
       store.splice(index, 1);
       return store;
     },
+    setAllCourses: (store, action) => {
+      store = action.payload;
+      return store;
+    },
   },
 });
 
-export const { incrementLikes, deleteCourse } = coursesSlice.actions;
+export const { incrementLikes, deleteCourse, setAllCourses } =
+  coursesSlice.actions;
 export default coursesSlice.reducer;
