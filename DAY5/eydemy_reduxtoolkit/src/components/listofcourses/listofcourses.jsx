@@ -12,13 +12,13 @@ export default function ListOfCourses() {
   const courses = useSelector(store => store.courses);
   const dispatch = useDispatch();
   useEffect(() => {
-    // dispatch(FetchAllCourses_Saga());
+    dispatch(FetchAllCourses_Saga());
     // dispatch({ type: COURSES_FETCH_REQUESTED });
   }, []);
 
   return (
     <>
-      <button
+      {/* <button
         className="btn btn-primary"
         onClick={() => {
           dispatch(FetchAllCourses_Retry_Saga());
@@ -26,7 +26,7 @@ export default function ListOfCourses() {
       >
         {" "}
         Get All Courses
-      </button>
+      </button> */}
       <div className="row">
         {courses.map(course => (
           <Course coursedetails={course} key={course.id} />

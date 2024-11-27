@@ -51,7 +51,7 @@
       "description": "Flutter is an open-source UI software development kit created by Google. It is used to develop cross-platform applications for Android, iOS, Linux, macOS, Windows, Google Fuchsia, and the web from a single codebase. First described in 2015, Flutter was released in May 2017. "
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "GraphQL",
       "price": 7000,
       "likes": 700,
@@ -89,6 +89,16 @@
       "trainer": "Jack Well",
       "imageUrl": "https://miro.medium.com/v2/resize:fit:1400/0*SoqCeEz9EctJBXKw.png",
       "description": "Go Lang go !"
+    },
+    {
+      "id": "11",
+      "title": "Rancher",
+      "rating": "4",
+      "price": "2000",
+      "likes": "100",
+      "trainer": "Jack Well",
+      "imageUrl": "https://media.licdn.com/dms/image/v2/D4E12AQE8rcE6ueAYug/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1675891131553?e=2147483647&v=beta&t=PpGP55ID-Lg62rx5EbSkOQiYW3CaWqDFJmYBpdDogG0",
+      "description": "Rancher !"
     }
   ]
 }

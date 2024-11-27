@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListOfCourses from "../listofcourses/listofcourses";
+import NewCourse from "../newcourse/newcourse";
 import Navbar from "../navbar/navbar";
 import Dashboard from "../dashboard/dashboard";
 import CourseDetails from "../coursedetails/coursedetails";
@@ -16,11 +17,12 @@ function App() {
           <Route path="coursedetails/:id" Component={CourseDetails} />
           <Route path="cart" Component={CartItems} />
           <Route path="posts" Component={Posts} />
+          <Route path="newcourse" Component={NewCourse} />
+
           {/* <Route path="posts" Component={Posts} />
           <Route path="postdetails/:id" Component={PostDetails} />
 
           <Route path="postbyid" Component={GetPostById} />
-          <Route path="newcourse" Component={NewCourse} />
           <Route path="contextapi" Component={GrandParent} /> */}
         </Route>
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { call, takeLatest, put, retry } from "redux-saga/effects";
 import { setAllPosts } from "../redux/reducers/posts.reducer";
-import { setAllCourses } from "../redux/reducers/courses.reducer";
+import { addNewCourse, setAllCourses } from "../redux/reducers/courses.reducer";
 
 function GetAllPosts() {
   return axios.get("http://jsonplaceholder.typicode.com/posts");
@@ -38,9 +38,25 @@ function* retrySaga() {
   }
 }
 
+function AddNewCourse(newcourse) {
+  console.log(newcourse);
+  return axios.post("http://localhost:3500/courses", newcourse);
+}
+
+function* AddNewCourse_Gen_Saga(action) {
+  console.log(action);
+  try {
+    const res = yield call(AddNewCourse, action.payload); // places the async call
+    yield put(addNewCourse()); // put is like dispatch
+  } catch (error) {
+    // put(setAllCoursesRejected(error))
+  }
+}
+
 // Watcher Saga
 export function* mySaga() {
   // yield takeLatest("POSTS_FETCH_REQUESTED", fetchPostsSaga);
-  // yield takeLatest("COURSES_FETCH_REQUESTED", fetchCoursesSaga);
-  yield takeLatest("COURSES_FETCH_RETRY", retrySaga);
+  yield takeLatest("COURSES_FETCH_REQUESTED", fetchCoursesSaga);
+  // yield takeLatest("COURSES_FETCH_RETRY", retrySaga);
+  yield takeLatest("ADD_NEW_COURSE", AddNewCourse_Gen_Saga);
 }
