@@ -7,7 +7,7 @@ type Query{
 }
 
 type Mutation{
-    addCourse(newCourse:CourseInput):Course
+    addCourse(newCourse:CourseInput!):Course
 }
 
 
