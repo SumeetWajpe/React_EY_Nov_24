@@ -4,10 +4,13 @@ import NewCourse from "../newcourse/newcourse";
 import Dashboard from "../dashboard/dashboard";
 import CourseDetails from "../coursedetails/coursedetails";
 import CartItems from "../cart/cartitems/cartitems";
-import Posts from "../posts/posts";
+// import Posts from "../posts/posts";
 import PostDetails from "../postdetails/postdetails";
 import Login from "../login/login";
 import RequireAuth from "../hoc/requireauth";
+import { lazy, Suspense } from "react";
+
+const LazyLoadedPosts = lazy(() => import("../posts/posts"));
 
 function App() {
   return (
@@ -25,7 +28,14 @@ function App() {
           <Route path="" Component={ListOfCourses} />
           <Route path="coursedetails/:id" Component={CourseDetails} />
           <Route path="cart" Component={CartItems} />
-          <Route path="posts" Component={Posts} />
+          <Route
+            path="posts"
+            element={
+              <Suspense fallback={() => "Loading..."}>
+                <LazyLoadedPosts />
+              </Suspense>
+            }
+          />
           <Route path="postdetails/:id" Component={PostDetails} />
 
           <Route path="newcourse" Component={NewCourse} />
