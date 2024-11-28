@@ -5,7 +5,7 @@ export let coursesModel = [
     price: 5000,
     likes: 400,
     rating: 5,
-    trainer: "Jack Well",
+    trainerId: 100,
     imageUrl:
       "https://www.loginradius.com/blog/static/00a89fc56461ea1529439d89072c93f1/701ee/react.jpg",
     description:
@@ -17,7 +17,7 @@ export let coursesModel = [
     price: 4000,
     likes: 600,
     rating: 5,
-    trainer: "John Jacob",
+    trainerId: 101,
     imageUrl:
       "https://negativeepsilon.com/media/attachments/blobs/2023/01/09/PNbZQxCiPVkNWzDNPDx24j_redux_rm05scp.png_riwC4kc5pLH7k1e5ReNajv_2FOQ.webp",
     description:
@@ -29,7 +29,8 @@ export let coursesModel = [
     price: 6000,
     likes: 900,
     rating: 4,
-    trainer: "Bishop Renny",
+    trainerId: 101,
+
     imageUrl:
       "https://blog.logrocket.com/wp-content/uploads/2022/10/Building-simple-login-form-node-js.png",
     description:
@@ -41,7 +42,8 @@ export let coursesModel = [
     price: 5000,
     likes: 200,
     rating: 3,
-    trainer: "Matthew Bell",
+    trainerId: 100,
+
     imageUrl:
       "https://i0.wp.com/blog.knoldus.com/wp-content/uploads/2019/03/angular-blog.png?fit=1600%2C795&ssl=1",
     description:
@@ -53,7 +55,8 @@ export let coursesModel = [
     price: 7000,
     likes: 700,
     rating: 4,
-    trainer: "Jenny Alter",
+    trainerId: 102,
+
     imageUrl: "https://miro.medium.com/max/2000/1*PCKC8Ufml-wvb9Vjj3aaWw.jpeg",
     description:
       "Flutter is an open-source UI software development kit created by Google. It is used to develop cross-platform applications for Android, iOS, Linux, macOS, Windows, Google Fuchsia, and the web from a single codebase. First described in 2015, Flutter was released in May 2017. ",
@@ -64,7 +67,8 @@ export let coursesModel = [
     price: 7000,
     likes: 700,
     rating: 4,
-    trainer: "Jenny Alter",
+    trainerId: 100,
+
     imageUrl: "https://cdn.codersociety.com/uploads/graphql-reasons.png",
     description:
       "GraphQL is a data query and manipulation language for APIs that allows a client to specify what data it needs (declarative data fetching). A GraphQL server can fetch data from separate sources for a single client query and present the results in a unified graph.[2] It is not tied to any specific database or storage engine. ",
@@ -75,7 +79,8 @@ export let coursesModel = [
     rating: "5",
     price: "5000",
     likes: "200",
-    trainer: "Sumeet Wajpe",
+    trainerId: 102,
+
     imageUrl:
       "https://concisesoftware.com/wp-content/uploads/2020/01/Kubernetes-logo.png",
     description:
@@ -87,7 +92,8 @@ export let coursesModel = [
     rating: "4",
     price: "1000",
     likes: "100",
-    trainer: "Jack Well",
+    trainerId: 101,
+
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJxrk8A5_FFzs6QhjdjFPhQ5DGe0poOHycjQ&s",
     description: "F # !",
@@ -98,7 +104,7 @@ export let coursesModel = [
     rating: "4",
     price: "2000",
     likes: "400",
-    trainer: "Jack Well",
+    trainerId: 102,
     imageUrl:
       "https://miro.medium.com/v2/resize:fit:1400/0*SoqCeEz9EctJBXKw.png",
     description: "Go Lang go !",

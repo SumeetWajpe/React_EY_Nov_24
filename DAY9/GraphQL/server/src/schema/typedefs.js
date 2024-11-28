@@ -20,9 +20,15 @@ type Course{
     price:Int
     likes:Int
     rating:Int
-    trainer:String
+    trainer:Trainer
     imageUrl:String
     description:String
+}
+
+type Trainer{
+    id:ID!
+    name:String
+    isMCT:Boolean
 }
 
 `;
