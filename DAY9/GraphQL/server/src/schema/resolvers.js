@@ -19,5 +19,12 @@ const resolvers = {
       return trainersModel.find(t => t.id == parent.trainerId);
     },
   },
+  Mutation: {
+    addCourse: (_, { newCourse }) => {
+      let newcoursetobeadded = newCourse;
+      coursesModel.push(newcoursetobeadded);
+      return newcoursetobeadded;
+    },
+  },
 };
 export default resolvers;

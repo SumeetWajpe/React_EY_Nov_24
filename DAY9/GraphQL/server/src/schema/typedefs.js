@@ -6,6 +6,21 @@ type Query{
     course(id:ID!):Course
 }
 
+type Mutation{
+    addCourse(newCourse:CourseInput):Course
+}
+
+
+input CourseInput{
+    id:ID
+    title:String
+    price:Int
+    likes:Int
+    rating:Int
+    trainerId:ID
+    imageUrl:String
+    description:String
+}
 
 type User{
     id:ID
