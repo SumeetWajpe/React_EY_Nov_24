@@ -3,6 +3,7 @@ const typeDefs = `#graphql
 type Query{
     users:[User]
     courses:[Course]
+    course(id:ID!):Course
 }
 
 

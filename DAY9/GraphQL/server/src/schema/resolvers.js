@@ -9,6 +9,9 @@ const resolvers = {
     courses: () => {
       return coursesModel;
     },
+    course: (_, { id }) => {
+      return coursesModel.find(c => c.id == id);
+    },
   },
 };
 export default resolvers;
