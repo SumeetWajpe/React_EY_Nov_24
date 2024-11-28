@@ -8,7 +8,7 @@ export default function CartIcon() {
     <div>
       <i className="fa-solid fa-cart-shopping" style={{ color: "orange" }}></i>{" "}
       <span className="badge rounded-pill text-bg-secondary">
-        <Link to="/cart">{cart.length}</Link>
+        <Link to="/dashboard/cart">{cart.length}</Link>
       </span>
     </div>
   );

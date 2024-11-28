@@ -14,7 +14,7 @@ export default function Course(props) {
   return (
     <div className="col-md-3 ">
       <div className="card m-2 shadow rounded-0">
-        <Link to={`/coursedetails/${props.coursedetails.id}`}>
+        <Link to={`/dashboard/coursedetails/${props.coursedetails.id}`}>
           <img
             src={props.coursedetails.imageUrl}
             className="card-img-top rounded-0"

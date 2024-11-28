@@ -14,7 +14,7 @@ export default function Navbar() {
       data-bs-theme="dark"
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/dashboard">
           EYdemy
         </Link>
         <button
