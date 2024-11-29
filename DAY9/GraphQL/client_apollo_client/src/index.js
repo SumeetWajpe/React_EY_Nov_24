@@ -14,18 +14,18 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-client
-  .query({
-    query: gql`
-      query GetAllCourses {
-        courses {
-          title
-          price
-        }
-      }
-    `,
-  })
-  .then(result => console.log(result));
+// client
+//   .query({
+//     query: gql`
+//       query GetAllCourses {
+//         courses {
+//           title
+//           price
+//         }
+//       }
+//     `,
+//   })
+//   .then(result => console.log(result));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
