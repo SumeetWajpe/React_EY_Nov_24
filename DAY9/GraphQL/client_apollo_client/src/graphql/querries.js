@@ -13,3 +13,20 @@ export const GETALLCOURSES = gql`
     }
   }
 `;
+
+export const GETCOURSEBYID = gql`
+  query GetCourseById($courseId: ID!) {
+    course(id: $courseId) {
+      id
+      title
+      price
+      likes
+      rating
+      imageUrl
+      trainer {
+        name
+      }
+      description
+    }
+  }
+`;
