@@ -5,6 +5,11 @@ export const GETALLCOURSES = gql`
     courses {
       title
       price
+      id
+      likes
+      rating
+      imageUrl
+      description
     }
   }
 `;
