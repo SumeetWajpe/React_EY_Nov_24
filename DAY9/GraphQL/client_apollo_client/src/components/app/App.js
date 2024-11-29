@@ -2,6 +2,7 @@ import ListOfCourses from "../listofcourses/listofcourses";
 import CourseDetails from "../coursedetails/coursedetails";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../navbar/navbar";
+import NewCourse from "../newcourse/newcourse";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" Component={ListOfCourses} />
         <Route path="/coursedetails/:id" Component={CourseDetails} />
-        {/* <Route path="/newcourse" Component={NewCourse} /> */}
+        <Route path="/newcourse" Component={NewCourse} />
 
         <Route
           path="*"

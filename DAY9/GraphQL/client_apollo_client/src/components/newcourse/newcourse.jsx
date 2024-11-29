@@ -1,14 +1,17 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
-import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
-import { AddNewCourse_Saga } from "../../saga/sagaactions";
+import { useMutation } from "@apollo/client";
+import { ADD_NEW_COURSE } from "../../graphql/mutations";
+import { GETALLCOURSES } from "../../graphql/querries";
 
 export default function NewCourse() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+
+  let [AddCourse, { data }] = useMutation(ADD_NEW_COURSE, {
+    refetchQueries: [GETALLCOURSES],
+  });
+
   const {
     register,
     handleSubmit,
@@ -21,13 +24,36 @@ export default function NewCourse() {
       </header>
       <div className="d-flex justify-content-center align-items-center">
         <form
-          onSubmit={handleSubmit(async formData => {
-            try {
-              let courseToBeInserted = { ...formData };
-            } catch (error) {
-              // navigate("/");
-            }
-          })}
+          onSubmit={handleSubmit(
+            async ({
+              id,
+              title,
+              price,
+              likes,
+              rating,
+              imageUrl,
+              description,
+            }) => {
+              try {
+                AddCourse({
+                  variables: {
+                    newCourse: {
+                      id,
+                      title,
+                      price: +price,
+                      likes: +likes,
+                      rating: +rating,
+                      imageUrl,
+                      description,
+                    },
+                  },
+                });
+                navigate("/");
+              } catch (error) {
+                // navigate("/");
+              }
+            },
+          )}
         >
           <div className="row m-1">
             <div className="col-md-4">
